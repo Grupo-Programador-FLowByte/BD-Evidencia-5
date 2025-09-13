@@ -1,14 +1,12 @@
 -- Franco
--- Insertar al menos 4 usuarios de ejemplo:
--- INSERT INTO Usuario (nombre, usuario, clave, rol) VALUES (...);
--- Incluir una consulta SELECT * FROM Usuario;
---IMPORTANTE: AGREGAR AL SCRIPT
-/* ('Franco Quispe', 'Franco', 'clave1', 'admin'),
-('Lucas Gomez', 'Lucas', 'clave2', 'estandar'),
-('Valentino Lorenti', 'Valen', 'clave3', 'estandar'),
-('Sergio Corso', 'maria', 'clave4', 'estandar'),
-*/
+-- insert
+INSERT INTO Usuario (nombre,usuario,clave,rol) VALUES ("Franco Quispe", "Franco", "clave1", "adm");
+INSERT INTO Usuario (nombre,usuario,clave,rol) VALUES ("Lucas Gomez", "Lucas", "clave2", "estandar");
+INSERT INTO Usuario (nombre,usuario,clave,rol) VALUES ("Valentino Lorenti", "Valen", "clave3", "estandar");
+INSERT INTO Usuario (nombre,usuario,clave,rol) VALUES ("Sergio Corso", "Mauri", "clave4", "estandar");
 
+-- fetch 
+SELECT * FROM Usuario;
 
 -- Sergio
 -- Insertar al menos 30 dispositivos asociados a distintos usuarios:

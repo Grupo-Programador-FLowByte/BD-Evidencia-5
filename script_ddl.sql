@@ -1,10 +1,12 @@
 -- Franco
 -- Crear la tabla Usuario:
--- id_usuario (PK, INT, AUTOINCREMENT, NOT NULL)
--- nombre (VARCHAR(45), NOT NULL)
--- usuario (VARCHAR(45), UNIQUE, NOT NULL)
--- clave (VARCHAR(45), NOT NULL)
--- rol (VARCHAR(45), NOT NULL) -- Ej: admin, estandar
+CREATE TABLE Usuario (
+  id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(45) NOT NULL,
+  usuario VARCHAR(45) NOT NULL UNIQUE,
+  clave VARCHAR(45) NOT NULL,
+  rol VARCHAR(45) NOT NULL
+);
 
 -- Sergio
 -- Crear la tabla Dispositivo:
