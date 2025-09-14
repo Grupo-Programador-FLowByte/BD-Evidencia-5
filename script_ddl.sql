@@ -10,11 +10,14 @@ CREATE TABLE Usuario (
 
 -- Sergio
 -- Crear la tabla Dispositivo:
--- id_dispositivo (PK, INT, AUTOINCREMENT, NOT NULL)
--- nombre (VARCHAR(45), NOT NULL)
--- tipo (VARCHAR(45), NOT NULL)
--- estado (VARCHAR(45), NOT NULL)
--- usuario_id_usuario (FK que referencia a Usuario.id_usuario)
+CREATE TABLE Dispositivo (
+  id_dispositivo INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(45) NOT NULL,
+  tipo VARCHAR(45) NOT NULL,
+  estado VARCHAR(45) NOT NULL,
+  id_usuario INT,
+  FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)
+);
 
 -- Valentino
 -- Crear la tabla Automatizacion:
