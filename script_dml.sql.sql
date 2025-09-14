@@ -9,12 +9,9 @@ INSERT INTO Usuario (nombre,usuario,clave,rol) VALUES ("Sergio Corso", "Mauri", 
 SELECT * FROM Usuario;
 
 -- Sergio
--- Insertar al menos 30 dispositivos asociados a distintos usuarios:
--- INSERT INTO Dispositivo (nombre, tipo, estado, usuario_id_usuario) VALUES (...);
--- Incluir una consulta SELECT * FROM Dispositivo;
--- Insertar 30 dispositivos asociados a distintos usuarios
---IMPORTANTE: AGREGAR AL SCRIPT
-/* ('Termostato', 'climatizador', 'encendido', 1),
+-- insert
+INSERT INTO Dispositivo (nombre, tipo, estado, id_usuario) VALUES
+('Termostato', 'climatizador', 'encendido', 1),
 ('Cámara Entrada', 'sensor', 'encendido', 1),
 ('Luz Cocina', 'luz', 'apagado', 1),
 ('Sensor Movimiento', 'sensor', 'encendido', 1),
@@ -33,17 +30,20 @@ SELECT * FROM Usuario;
 ('Sensor Patio', 'sensor', 'encendido', 4),
 ('Ventilador Dormitorio', 'climatizador', 'apagado', 4),
 ('Luz Jardín', 'luz', 'encendido', 4),
-('Luz Terraza', 'luz', 'apagado', 5),
-('Cámara Terraza', 'sensor', 'encendido', 5),
-('Sensor Cocina', 'sensor', 'apagado', 5),
-('Ventilador Cocina', 'climatizador', 'encendido', 5),
-('Luz Hall', 'luz', 'apagado', 5),
-('Cámara Hall', 'sensor', 'encendido', 5),
-('Sensor Dormitorio', 'sensor', 'apagado', 5),
-('Luz Balcón', 'luz', 'encendido', 5),
-('Ventilador Hall', 'climatizador', 'apagado', 5); */
+('Luz Terraza', 'luz', 'apagado', 1),
+('Cámara Terraza', 'sensor', 'encendido', 2),
+('Sensor Cocina', 'sensor', 'apagado', 3),
+('Ventilador Cocina', 'climatizador', 'encendido', 4),
+('Luz Hall', 'luz', 'apagado', 1),
+('Cámara Hall', 'sensor', 'encendido', 2),
+('Sensor Dormitorio', 'sensor', 'apagado', 3),
+('Luz Balcón', 'luz', 'encendido', 4),
+('Luz Habitación', 'luz', 'apagado', 4),
+('Cámara Jardín', 'luz', 'encendido', 2),
+('Ventilador Hall', 'climatizador', 'apagado', 1);
 
-
+-- fetch 
+SELECT * FROM Dispositivo;
 
 
 -- Valentino
