@@ -1,15 +1,8 @@
--- Franco
--- insert
 INSERT INTO Usuario (nombre,usuario,clave,rol) VALUES ("Franco Quispe", "Franco", "clave1", "adm");
 INSERT INTO Usuario (nombre,usuario,clave,rol) VALUES ("Lucas Gomez", "Lucas", "clave2", "estandar");
 INSERT INTO Usuario (nombre,usuario,clave,rol) VALUES ("Valentino Lorenti", "Valen", "clave3", "estandar");
 INSERT INTO Usuario (nombre,usuario,clave,rol) VALUES ("Sergio Corso", "Mauri", "clave4", "estandar");
 
--- fetch 
-SELECT * FROM Usuario;
-
--- Sergio
--- insert
 INSERT INTO Dispositivo (nombre, tipo, estado, id_usuario) VALUES
 ('Termostato', 'climatizador', 'encendido', 1),
 ('Cámara Entrada', 'sensor', 'encendido', 1),
@@ -42,36 +35,30 @@ INSERT INTO Dispositivo (nombre, tipo, estado, id_usuario) VALUES
 ('Cámara Jardín', 'luz', 'encendido', 2),
 ('Ventilador Hall', 'climatizador', 'apagado', 1);
 
--- fetch 
-SELECT * FROM Dispositivo;
-
-
--- Valentino
--- insert
 INSERT INTO Automatizacion (nombre, funcionalidad, estado, id_usuario) VALUES
-('Modo ahorro de energía', 'apaga dispositivos no esenciales automáticamente', 'esencial', 1),
-('Control temperatura', 'ajusta temperatura a 22°C', 'esencial', 3),
-('Alarma patio', 'suena alarma si se detecta intruso', 'esencial', 4);
+('Modo ahorro de energía', 'apaga dispositivos no esenciales automáticamente', 'encendido', 1),
+('Control temperatura', 'ajusta temperatura a 22°C', 'apagado', 3),
+('Alarma patio', 'suena alarma si se detecta intruso', 'encendido', 4);
 
--- fetch 
-SELECT * FROM Automatizacion;
-
--- Lucas
--- Insertar relaciones de ejemplo entre automatizaciones y dispositivos:
--- INSERT INTO automatizacion_has_dispositivo (automatizacion_id_automatizacion, dispositivo_id_dispositivo) VALUES (...);
--- Incluir un SELECT con JOIN para mostrar qué dispositivos pertenecen a cada automatización.
--- Lucas: Insertar relaciones de ejemplo entre automatizaciones y dispositivos
--- Relación muchos a muchos
-
--- Automatización 1: "Modo ahorro de energía" → varios dispositivos
 INSERT INTO automatizacion_has_dispositivo (automatizacion_id_automatizacion, dispositivo_id_dispositivo) VALUES 
 (1, 1),(1, 4),(1, 7),(1, 10),(1, 16),(1, 20),(1, 25),(1, 29);
 
--- Automatización 2: "Control temperatura" → varios dispositivos
 INSERT INTO automatizacion_has_dispositivo (automatizacion_id_automatizacion, dispositivo_id_dispositivo) VALUES 
 (2, 2),(2, 6),(2, 11),(2, 15),(2, 24),(2, 30);
 
--- Automatización 3: "Alarma patio" → varios dispositivos
 INSERT INTO automatizacion_has_dispositivo (automatizacion_id_automatizacion, dispositivo_id_dispositivo) VALUES 
 (3, 3),(3, 8),(3, 12),(3, 17),(3, 22),(3, 27);
 
+SELECT * FROM Usuario;
+SELECT * FROM Dispositivo;
+SELECT * FROM Automatizacion;
+SELECT * FROM automatizacion_has_dispositivo where automatizacion_id_automatizacion = 1;
+SELECT * FROM automatizacion_has_dispositivo where automatizacion_id_automatizacion = 2;
+
+SELECT id_dispositivo, nombre
+FROM Dispositivo
+WHERE id_dispositivo IN (SELECT dispositivo_id_dispositivo FROM automatizacion_has_dispositivo);
+
+SELECT id_dispositivo, nombre
+FROM Dispositivo
+WHERE id_dispositivo NOT IN (SELECT dispositivo_id_dispositivo FROM automatizacion_has_dispositivo);

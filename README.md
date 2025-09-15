@@ -1,6 +1,7 @@
 # BD-Evidencia-5
 
 Este repositorio contiene los scripts para crear y poblar la base de datos del proyecto **SmartHome Solutions**, correspondiente a la Evidencia 5. Se incluyen las tablas `Usuario`, `Dispositivo`, `Automatizacion` y la tabla intermedia `automatizacion_has_dispositivo`, representando la relación muchos a muchos entre automatizaciones y dispositivos.
+El DBMS usado fue **MySQL** en [OneCompiler](https://onecompiler.com/sql)   
 
 ## Contenido de la carpeta
 
