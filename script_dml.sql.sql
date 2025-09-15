@@ -47,13 +47,14 @@ SELECT * FROM Dispositivo;
 
 
 -- Valentino
--- Insertar al menos 3 automatizaciones asociadas a distintos usuarios:
--- INSERT INTO Automatizacion (nombre, funcionalidad, estado, usuario_id_usuario) VALUES (...);
--- Incluir una consulta SELECT * FROM Automatizacion;
---IMPORTANTE: AGREGAR AL SCRIPT
-/* ('Modo ahorro de energía', 'apaga dispositivos no esenciales automáticamente', 'esencial', 1),
+-- insert
+INSERT INTO Automatizacion (nombre, funcionalidad, estado, id_usuario) VALUES
+('Modo ahorro de energía', 'apaga dispositivos no esenciales automáticamente', 'esencial', 1),
 ('Control temperatura', 'ajusta temperatura a 22°C', 'esencial', 3),
-('Alarma patio', 'suena alarma si se detecta intruso', 'esencial', 5); */
+('Alarma patio', 'suena alarma si se detecta intruso', 'esencial', 4);
+
+-- fetch 
+SELECT * FROM Automatizacion;
 
 -- Lucas
 -- Insertar relaciones de ejemplo entre automatizaciones y dispositivos:
